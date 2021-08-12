@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+    --empty: grey;
+    --full: green;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(212, 218, 228);
+    overflow: hidden;
+}
+
+.container {
+    width: 90vw;
+    align-items: center;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 3em;
+    position: relative;
+}
+
+.count {
+    border: var(--empty) solid 5px;
+    border-radius: 50%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next-btn,
+.prev-btn {
+    padding: 15px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.next-btn:active,
+.prev-btn:active {
+    background-color: var(--full);
+    transform: rotateZ(-360deg);
+    transition: transform .8s ease;
+}
+
+.next-btn:disabled,
+.prev-btn:disabled {
+    cursor: not-allowed;
+    transform: none;
+}
+
+.active {
+    border-color: var(--full);
+    transition: border-color 1s ease-in;
+}
+
+.bar::before {
+    content: "";
+    background-color: var(--empty);
+    height: 5px;
+    width: 100%;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    z-index: -2;
+}
+
+#bar-line {
+    background-color: var(--full);
+    width: 0%;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s ease;
+}
