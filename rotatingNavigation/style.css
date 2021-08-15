@@ -1,0 +1,118 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    height: 100vh;
+    margin: 0;
+    background-color: thistle;
+}
+
+.container {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+
+}
+
+.container .content {
+    padding: 60px;
+    position: relative;
+    background-color: whitesmoke;
+}
+
+.content {
+    height: 100%;
+    margin: 0 auto;
+    text-align: justify;
+    max-width: 900px;
+}
+
+.content h1 {
+    margin-bottom: 0;
+}
+
+.content small {
+    font-style: italic;
+}
+
+.container.rott {
+    transform: rotateZ(-20deg);
+    transform-origin: top left;
+    transition: transform .5s linear;
+}
+
+.container .content img {
+    max-width: 100%;
+}
+
+.container .circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    z-index: 50;
+}
+
+.container .circle-container .circle {
+    background-color: lightsalmon;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.circle-container .circle button {
+    position: absolute;
+    z-index: 100;
+    top: 55%;
+    left: 50%;
+    color: black;
+    font-size: 60px;
+    background: transparent;
+    border: 0;
+}
+
+.circle button#open {
+    left: 60%;
+}
+
+.circle button#close {
+    top: 70%;
+    transform-origin: top left;
+    transform: rotateZ(110deg);
+}
+
+.container.rott .circle {
+    transform: rotateZ(-50deg);
+    transition: transform .5s ease;
+}
+
+.container + nav ul {
+    transform: translateX(-110%);
+}
+
+.container.rott + nav {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+}
+
+.container.rott + nav ul {
+    list-style: none;
+    transform: translateX(0);
+    transition: transform .5s ease-in;
+}
+
+.container.rott + nav ul li {
+    margin: 10px 0px;
+    color: black;
+    font-size: 16px;
+    font-style: bold;
+}
+
+.container.rott + nav ul li + li {
+    margin-left: 15px;
+}
+
+.container.rott + nav ul li + li + li {
+    margin-left: 30px;
+}
+
