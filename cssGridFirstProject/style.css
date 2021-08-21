@@ -1,0 +1,170 @@
+/* CSS Variables */
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+
+body {
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+.btn {
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+}
+
+/* Navigation */
+.main-nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.main-nav ul li {
+    list-style: none;
+    text-align: center;
+}
+
+.main-nav ul li a {
+    color: var(--dark);
+    text-decoration: none;
+    text-transform: uppercase;
+    background: var(--primary);
+    padding: 1rem 4rem;
+    box-shadow: var(--shadow);
+    font-weight: bold;
+}
+
+.main-nav ul li a:hover {
+    color: var(--light);
+    background: var(--dark);
+}
+
+.top-container {
+    display: grid;
+    grid-template-areas: 'showcase showcase top-box-a'
+                        'showcase showcase top-box-b';
+    gap: 10px;
+}
+
+.top-container .showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background: url('img/showCase.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.showcase h1 {
+    font-size: 3rem;
+    color: var(--light);
+    margin-bottom: 0;
+}
+
+.showcase p {
+    color: var(--light);
+    font-size: 1rem;
+}
+
+.top-box {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    background: var(--primary);
+}
+
+.top-box h4 {
+    font-size: 1rem;
+}
+
+.top-box p {
+    font-size: 1.5rem;
+}
+
+.top-container .top-box-a {
+    grid-area: top-box-a;
+}
+
+.top-container .top-box-b {
+    grid-area: top-box-b;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 20px;
+    gap: 1em;
+
+}
+
+.box {
+    text-align: center;
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 2rem;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+    gap: 30px;
+    background: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+}
+
+.portfolio img {
+    width: 100%;
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    padding: 10px;
+}
+
+footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p{
+    color: var(--light);
+}
