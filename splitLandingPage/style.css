@@ -1,0 +1,117 @@
+:root {
+    --left-bg-color: rgba(102, 153, 204, .5);
+    --right-bg-color: rgba(227, 34, 39, .4);
+    --left-btn-color: rgba(102, 153, 204, 1);
+    --right-btn-color: rgba(227, 34, 39, 1);
+    --active-width: 70%;
+    --other-width: 30%;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.split {
+    width: 50%;
+    margin: 0;
+    transition: width .8s ease;
+}
+
+.split.left::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+
+.split.left {
+    position: absolute;
+    left: 0;
+    background-image: url('iceCream.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.split.right::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+
+.split.right {
+    position: absolute;
+    right: 0;
+    background-image: url('fries.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 36px;
+}
+
+.split a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border: 2px white solid;
+    padding: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.left a:hover {
+    background-color: var(--left-btn-color);
+    border-color: var(--left-btn-color);
+}
+
+.right a:hover {
+    background-color: var(--right-btn-color);
+    border-color: var(--right-btn-color);
+}
+
+.container.show-left .left{
+    width: var(--active-width);
+}
+
+.container.show-left .right{
+    width: var(--other-width);
+}
+
+.container.show-right .right{
+    width: var(--active-width);
+}
+
+.container.show-right .left{
+    width: var(--other-width);
+}
